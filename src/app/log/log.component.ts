@@ -12,4 +12,6 @@ export class LogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  points = [0,1,2,3,4,5];
+
 }

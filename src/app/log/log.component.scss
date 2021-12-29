@@ -1,0 +1,13 @@
+.points-card {
+  height: 50px;
+  width: 50px;
+  background: cornflowerblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.points-row {
+  display: flex;
+  gap: 10px;
+}
