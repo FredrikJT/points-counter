@@ -7,12 +7,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SeriesCounterComponent } from './series-counter/series-counter.component';
+import { LogComponent } from './log/log.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SeriesCounterComponent
+    SeriesCounterComponent,
+    LogComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
