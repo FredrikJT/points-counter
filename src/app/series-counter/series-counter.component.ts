@@ -12,4 +12,12 @@ export class SeriesCounterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  seriesPoints: Number[] = [
+  ];
+
+
+  onChange(results: Number[], index: any) {
+    this.seriesPoints[index] = results[index];
+    console.log(results, index, this.seriesPoints[0])
+  }
 }
