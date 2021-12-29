@@ -1,5 +1,5 @@
 
-  <form class="series-form" #seriesForm="ngForm"  >
+  <form class="series-form" #seriesForm="ngForm" (ngSubmit)="onSubmit(seriesForm.value)" >
     <mat-form-field class="points-input" appearance="fill" *ngFor="let result of [0,1,2,3,4,5]">
       <mat-label>{{result+1}}</mat-label>
       <input
@@ -7,9 +7,12 @@
         type="number"
         name="{{result}}"
         [ngModel]="seriesPoints[result]"
-        (click)="onChange(seriesForm.value, result)"
       >
     </mat-form-field>
+
+    <button>Submit</button>
+
+
 
   </form>
 

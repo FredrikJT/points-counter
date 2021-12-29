@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-series-counter',
@@ -6,18 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./series-counter.component.scss']
 })
 export class SeriesCounterComponent implements OnInit {
+  seriesName = new Date().toString();
 
-  constructor() { }
+  constructor(private storage: LocalStorageService) { }
 
   ngOnInit(): void {
+
   }
 
   seriesPoints: Number[] = [
   ];
 
 
-  onChange(results: Number[], index: any) {
-    this.seriesPoints[index] = results[index];
-    console.log(results, index, this.seriesPoints[0])
+  onSubmit(series:any) {
+    this.storage.set(this.seriesName, series)
   }
 }
