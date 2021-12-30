@@ -1,9 +1,0 @@
-
-<div class="series-container" *ngFor="let serie of this.series | keyvalue">
-    {{serie.key}}
-    <div class="points-row">
-      <div class="points-card" *ngFor="let point of serie.value | keyvalue">
-        {{point.value}}
-      </div>
-    </div>
-</div>
