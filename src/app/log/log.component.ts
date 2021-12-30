@@ -8,46 +8,22 @@ import { LocalStorageService } from '../local-storage.service';
 })
 export class LogComponent implements OnInit {
 
-  constructor(private storage: LocalStorageService) { }
+  seriesNames = this.storage.getKeys();
+  series = {};
 
-  seriesPoints: Number[] = [];
+  constructor(private storage: LocalStorageService) { }
 
   ngOnInit(): void {
 
-    console.log(this.storage.getKeys())
-
-
-
-    const seriesNames = this.storage.getKeys();
-
-    if(seriesNames === null) {
+    if(!this.seriesNames) {
       return;
     }
 
-
-    console.log(seriesNames);
-    seriesNames.forEach(name => {
-      console.log(name);
-      let points = this.storage.get(name);
-      //Skapa seriesPoints array och presentera i template
-    });
-
-
-
-    // seriesNames.forEach(seriesName => {
-    //   let points = this.storage.get(seriesName) as Number[];
-    //   seriesPoints.push(...points);
-    // });
-
-    // console.log(seriesPoints[0]);
+    this.seriesNames.forEach((serieName) => {
+      if(!serieName) return;
+      let points = this.storage.get(serieName) as {};
+      this.series = {...this.series, [serieName]: points}
+    })
   }
-
-  pushPoints(points: []):void {
-    this.seriesPoints.push(...points);
-  }
-
-
-
-  points = [0,1,2,3,4,5];
 
 }
