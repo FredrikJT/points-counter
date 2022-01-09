@@ -1,4 +1,6 @@
-<div class="app-container">
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
+<div class="flex items-center flex-col sm:bg-slate-200 h-screen">
+  <div class="flex items-center flex-col sm:max-w-screen-sm sm:bg-white h-full">
+    <router-outlet></router-outlet>
+    <app-footer class="mt-auto w-full"></app-footer>
+  </div>
 </div>

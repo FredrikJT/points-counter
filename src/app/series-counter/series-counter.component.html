@@ -1,16 +1,18 @@
 
-  <form class="series-form" #seriesForm="ngForm" (ngSubmit)="onSubmit(seriesForm.value)" >
-    <mat-form-field class="points-input" appearance="fill" *ngFor="let result of [0,1,2,3,4,5]">
-      <mat-label>{{result+1}}</mat-label>
-      <input
-        matInput
-        type="number"
-        name="{{result}}"
-        [ngModel]="seriesPoints[result]"
-      >
-    </mat-form-field>
+  <form class="series-form flex flex-col" #seriesForm="ngForm" (ngSubmit)="onSubmit(seriesForm.value)" >
+    <div>
+      <mat-form-field class="points-input" appearance="fill" *ngFor="let result of [0,1,2,3,4,5]">
+        <mat-label>{{result+1}}</mat-label>
+        <input
+          matInput
+          type="number"
+          name="{{result}}"
+          [ngModel]="seriesPoints[result]"
+        >
+      </mat-form-field>
+    </div>
 
-    <button>Submit</button>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
 
 
 
